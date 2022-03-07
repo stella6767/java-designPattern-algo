@@ -69,7 +69,7 @@ fun <T> test(num:Int, vararg  items: T) {
      */
 
     for(item in items){
-        print("${item} ")
+        println("${item} ")
     }
 }
 
@@ -84,13 +84,22 @@ tailrec fun printData(endNum:Int, initNum:Int):Unit {
      * 왜냐면 자바코드로 변경될 때, 재귀함수로 변경되지 않고, 일반적인 while문으로 변경되기 때문
      *
      * tailrec을 사용할 때 주의점은 재귀함수가 함수의 가장 마지막에서 호출되어야 한다
+     *
+     *
+     * ?????? 이해가 안 가네.. 재귀함수가 이상하게 동작하는데?? 아니군, 위의 print println 때문에 헷갈렸네.
+     * 근데 디버깅 모드에서 INITNum 이 1로 찍히는데??
      */
-    //println(initNum) 뭐지?
+
+
+    // return  //바로 종료
 
 
     if(endNum == initNum){
+        //println(initNum)
         return
     }else{
+        //println(initNum)
+        //println("??")
         println("Hello World")
     }
 

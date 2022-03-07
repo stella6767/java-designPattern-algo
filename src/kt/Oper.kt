@@ -1,3 +1,5 @@
+package kt
+
 import com.sun.tools.javac.Main
 import java.util.*
 

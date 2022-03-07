@@ -1,4 +1,4 @@
-package java
+package javacore
 
 import kotlin.jvm.JvmStatic
 
