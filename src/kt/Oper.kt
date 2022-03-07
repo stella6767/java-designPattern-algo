@@ -29,7 +29,27 @@ fun main(array: Array<String>){
 
     test()
 
+    println("${ if (num4 != null) "???" 
+    else "null임"}")
+
+    println("${num4?.length}") // 자바스크립트의 옵셔널 체이닝 문법괍 비슷하네.
+    println("${num4?.length ?: " length를 알 수 없음"}") //엘비스 연산자
+
+    println(joinForm("홍길동", 21))
+    println(joinForm(null, 21)?: "가입 내용 누락")
+
+    //?. safe call
+    // as? safe cast
+    // ? elvis operator
+    
 }
+
+// 널 가능 리턴 함수
+fun joinForm(name: String?, age:Int):String?{
+    val result = if (name != null) "$name 가입 ($age 세)" else null
+    return result
+}
+
 
 
 //var num6:String = null //?가 없는 변수는 null을 대입할 수 없음.
@@ -71,6 +91,7 @@ fun test(){
     println(data)
     check = false
     println(data)
+
 
 }
 
