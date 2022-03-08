@@ -12,13 +12,17 @@ package kt
 
 
 
-fun main(){
+fun main(args: Array<String>){
 
-
+    val a = Array(2,{0}) //Array(n,{fun})
+    a[1]  = 10
+    val b =  Array<Char>(3, {'_'})// Array<T> //타입 제한 인자
+    val c =  Array<Int?>(3, {null})// Array<T> //타입 제한 인자
+    val d:Array<String> = args
 
     var array = arrayOf(1, "kang", true)
 
-    array[0] = 10 as Nothing
+    //array[0] = 10 //????
 
     println("${array[0]} .. ${array[1]} .. ${array[2]} .. ${array.get(0)}")
     println("size : ${array.size} .. ")
@@ -26,6 +30,10 @@ fun main(){
     var array2 = arrayOf<Int>(1,2)
     println("${array2[0]} .. ${array2[1]}")
 
+
+    if (true){
+
+    }
 
     val x: IntArray = intArrayOf(1, 2, 3)//Kotlin에는 boxing 오버헤드 없이 기본 유형의 배열을 나타내는 클래스도 있습니다 ByteArray, ShortArray, IntArray등)
 

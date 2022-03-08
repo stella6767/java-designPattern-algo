@@ -41,7 +41,7 @@ fun main(array: Array<String>){
     //?. safe call
     // as? safe cast
     // ? elvis operator
-    
+
 }
 
 // 널 가능 리턴 함수
