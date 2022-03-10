@@ -23,8 +23,7 @@ public class StackAlgo {
     public String solution2(String str){
         String answer = "";
         for (char x : str.toCharArray()) {
-            if (x == '(') stack.push(x);
-            
+            if (x == '(' || x == ')') stack.push(x);
             else{
                 if (stack.isEmpty()) return "NO";
                 stack.pop();
