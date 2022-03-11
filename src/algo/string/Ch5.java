@@ -15,28 +15,29 @@ public class Ch5 {
 
 
     private static void solution(String input) {
+        //a#b!GE*T@S
 
         String answer = "";
         char[] chars = input.toCharArray();
         int lt =  0, rt = chars.length -1 ;
 
-        for (char c  : chars) {
-            if (Character.isAlphabetic(c)) {
-               rt--;
-            } else if (!Character.isAlphabetic(c)) {
+        while (lt < rt){
+            if (!Character.isAlphabetic(chars[lt])) {
                 lt++;
+            } else if (!Character.isAlphabetic(chars[rt])) {
+                rt --;
             }
-            char tmp = chars[lt];
-            chars[lt] = chars[rt];
-            chars[rt] = tmp;
-            lt++;
-            rt--;
-
-
+            else {
+                //배열의 양 끝에서 알파벳일 때만 교환.
+                char tmp = chars[lt];
+                chars[lt] = chars[rt];
+                chars[rt] = tmp;
+                lt++;
+                rt--;
+            }
         }
         answer = String.valueOf(chars);
         System.out.println(answer);
-
     }
 
 }
