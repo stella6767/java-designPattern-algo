@@ -5,20 +5,20 @@ import java.util.Scanner;
 
 public class Ch4 {
 
-    public static String solution(ArrayList<String> input){
+    public static void solution(ArrayList<String> input){
 
         String answer = "";
         for (String s : input) {
-            char[] chars = s.toCharArray();
-            for (char aChar : chars) {
-                //역순으로 출력..
-            }
 
+            StringBuilder sb = new StringBuilder();
+            sb.append(s);
+            reverse(sb);
         }
+    }
 
-
-
-        return answer;
+    public static void reverse(StringBuilder sb){
+        String s = sb.reverse().toString();
+        System.out.println(s);
     }
 
 
@@ -36,10 +36,6 @@ public class Ch4 {
         }
 
         solution(arrayList);
-
-       //System.out.println(solution(input));
-
-
     }
 
 }
