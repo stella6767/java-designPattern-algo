@@ -6,15 +6,13 @@ public class Ch5 {
 
 
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
-
         String input = sc.next();
-        solution(input);
+        System.out.println(solution(input));
     }
 
 
-    private static void solution(String input) {
+    private static String solution(String input) {
         //a#b!GE*T@S
 
         String answer = "";
@@ -37,7 +35,7 @@ public class Ch5 {
             }
         }
         answer = String.valueOf(chars);
-        System.out.println(answer);
+        return answer;
     }
 
 }
