@@ -1,59 +1,158 @@
 package javacore;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Ch6 {
 
     /**
+     * oop (객체 지향 프로그래밍).
      *
-     * 기계는 추상적으로 생각을 하지 않아요. 근데 인간은 추상적으로 생각. 프로그래밍의 세상을 인간의 관점으로 바라보자..
-     * 추상화라는 건 개별적인 실체로부터 공통적인 속성을 뽑아내는 거에요. 이렇게 함으로써, 실체가 없는것을, 마치 실체가 있는 것처럼 다룰 수 있음.
-     * 그래서 복잡한 세상을 좀 더 단순화시키고 이해하기쉽게 만들 수 있어요. 사실 완벽한 추상화라는 건 존재하지 않습니다. 우리가 . 을 생각.
-     * 항상 추상화는 허점이 있습니다. 왜냐면 실제 세상은 추상적으로 이루어지지 않아서.
+     * 추상화, 캡슐화, 은닉성, 다형성, 상속성
      *
-     * 예를 들어, 포유류라는 걸 정의할 때, 개별적인 무수한 실체가 있겠죠. 근데 곰곰히 생각해보면 그 실체들  중에서, 유선을 통해 젖을 먹여 영양분을 공급한다, 몸 내부에서 에너지를 자체적으로 변환해서 체온을 유지한다. 등
-     * 척추동물 중에서 유일하게 무릎뼈가 있다.
-     * 공통적인 특성이 보이는 거에요. 그래서 요런 속성들을 묶어서 포
-     * 근데 원래는 단공류라는 게 있어요. 얘는 알을 낳아요. 그래서 포유류에 존재하지 않았는데,
+     * 캡슐화: 데이터 구조와 데이터를 다루는 방법을 결합. 변수와 함수를 하나로 묶음
+     * 은닉성 - 캡술화의 한 개념. 내부 데이터, 내부 연산을 외부에서 접근 X , 상태는 행위를 통해서 변경해야된다는 것이 객체지향 철칙
+     * 추상화 - 컴퓨터는 추상적으로 생각하지 않는다. 추상화(개별적인 실체로부터 공통적인 속성을 뽑아내는 거), 실체가 없는 것을 마치 실체가 있는 것처럼 다룰 수 있게 됨.
+     * 예를 들어, 동물. , 복잡한 세상을 단순화시켜서 바라볼 수 있게 됨.
+     * 상속성 - 상위 개념의 특징을 하위 개념이 물려받는 것. 데이터 재사용성이 아니라, 다형성에 초점을 두고 구현을 해야해요. is a 관계
+     * 다형성 - 하나의 객체가 여러가지 타입을 가질 수 있는 것. 즉 고양이면서 동시에 동물이라고 부를 수 있게 되는 거죠.
      *
-     * 사람은 항상 관념적으로 생각을 하기 때문에, 물리적인 실체는 없습니다.
+     * has a (컴포지션)
      *
-     * 상태는 행위를 통해 변경되어야 한다. 그냥 변경하는 것은 마법.
-     *
-     * 의존관계
-     * 
-     * 인터페이스 구현, 뭔가를 할 수 있는. 클래스가 '무엇을 할 수 있다'라고 하는 기능을 구현하도록 '강제'하게 된다
-     *
-     * 쓸데없는 인터페이스
-     * 부모 클래스는 좀 잘못된 단어인 것 같은..  아들은 아버지가 아니다  is a 관계가 성립이 안 됨.
-     * 객체는 수동적인 개념이 있는데, 실제로는 메시지를 받으면 스스로 행동을 하는 능동적인 개념의 코드조각이라고  생각
-     * 
-     * LSP (리스코프 치환) - 성속을 계층이 아닌 확장으로 이해하라는 말
-     * 즉. 계층 관계 - 부모 밑에 자식이 아니라, 동물과 다람쥐처럼 다람쥐는 동물의 한 종류. 동물이라는 속성에서, 다람쥐로 확장하는 관계
-     * 상위 타입의 객체를 하위 타입의 객체로 치환해도 동작에 문제가 없어야 함
-     * 
-     * ISP - 인터페이스 분리 - 간단함 실제 구현체인, 클래스가 쓰지도 않는 인터페이스를 구현받을 필요없음.
-     *
-     *
-     * DIP (Dependency Inversion Principle) 의존 역전 원칙
-     * 
      *
      */
 
 
+    public static void main(String[] args) {
+//        Dragon dragon1 = new Dragon("Dragon1");
+//        dragon1.setHp(-100);
+//        System.out.println(dragon1);
+
+        //상속의 목적, 타입을 일치시키기 위해 사용.
 
 
-//    public int calculate(final Item item) {
-//        /**
-//         * 상위 타입인 Item이 있고, 그 하위 타입이 Apple이라면, 위 인자로 item이 아닌 apple을 넘겨도 코드가 동작해야 합니다.
-//         */
+        //heap 영역(cat, animal) -
+        Animal cat = new Cat();
+
+        //자연, 돌 extends 자연, 바위, 물
+
+
+//        //heap(포유류, 동물)
+//        Animal 포유류1 = new 포유류();
 //
-//        return item.calculate();
-//    }
+//        포유류 포 = (포유류) 포유류1;
+//        포.sound();
+
+//        Cat c = (Cat) 포; //컴파일 시점에서 에러를 잡을 수 없기 때문에, 주의를 해줘야
+//        c.sound();
+        Animal bird = new Bird();
+        Animal dog = new Dog();
 
 
+        Tamer tamer = new Tamer();
+        tamer.whipToAnimals();
+
+
+//
+//
+//
+//        sound(cat);
+//        sound(bird);
+//        sound(dog);
+//
+//        System.out.println(cat.hp);
+
+    }
+
+    static void sound(Animal a){
+        a.sound();
+    }
 
 
 }
 
 
+abstract class Animal { //추상클래스,
+    int hp = 10;
+    abstract void sound();
+    void a(){
+
+    }
+
+}
 
 
+//class 포유류 extends Animal{
+//
+//    @Override
+//    void sound() {
+//
+//    }
+//}
+
+class Dog extends Animal {
+
+    @Override
+    void sound(){
+        System.out.println("멍멍.");
+    };
+
+}
+
+class Cat extends Animal {
+
+    @Override
+    void sound() {
+        System.out.println( "야옹");
+    }
+}
+
+
+class Bird extends Animal {
+
+    @Override
+    void sound(){
+        System.out.println("짹쨱");
+    };
+
+}
+
+
+
+class Tamer {
+
+    //List<Animal> animals = new ArrayList<>();
+    Dog dog = new Dog();
+    Cat cat = new Cat();
+
+    void whipToAnimals(){
+        dog.sound();
+        cat.sound();
+    }
+
+}
+
+
+class Dragon {
+    final String name; // 상태
+    private int hp; //4byte
+    static int attack = 10; // 4byte
+
+    Dragon(String name) {
+        this.name = name;
+    }
+
+    public void setHp(int hp) {
+        if (hp >= 0){
+            this.hp = hp;
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Dragon{" +
+                "name='" + name + '\'' +
+                ", hp=" + hp +
+                '}';
+    }
+}
