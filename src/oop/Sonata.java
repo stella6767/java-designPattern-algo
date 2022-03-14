@@ -1,7 +1,7 @@
 package oop;
 
 public class Sonata extends Vehicle implements Control{
-    
+
     @Override
     public void 엑셀() {
 
