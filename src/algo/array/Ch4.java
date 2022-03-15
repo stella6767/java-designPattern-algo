@@ -1,7 +1,11 @@
 package algo.array;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
+
+import static kotlin.reflect.jvm.internal.impl.builtins.StandardNames.FqNames.list;
 
 public class Ch4 {
 
@@ -19,13 +23,18 @@ public class Ch4 {
 
     private static Integer solution(int input) {
 
-        ArrayList<Integer> list = new ArrayList<>();
+        int[] ints = new int[input];
 
-        list.add(1);
-        list.add(1);
+        ints[0] = 1;
+        ints[1] = 1;
 
-        
+        for (int i=2; i<input; i++){
+            ints[i] = ints[i-2] + ints[i-1];
+        }
 
+        for (int anInt : ints) {
+            System.out.print(anInt + " ");
+        }
 
         return null;
     }
