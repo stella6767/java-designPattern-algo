@@ -29,10 +29,7 @@ public class Ch11 {
             //System.out.println(input.charAt(i) +  "  , " + input.indexOf(input.charAt(i)));
             if ( i + 1<input.length()  && input.indexOf(input.charAt(i)) == input.indexOf(input.charAt(i + 1)) ) {
                 p++; //K, K 면
-                if (p > 1) {
-                    //answer += p;
-                    //p = 1;
-                }
+
             } else {
                 answer += input.charAt(i);
                 if (p > 1) {
