@@ -17,16 +17,15 @@ public class Ch6 {
      * 상속성 - 상위 개념의 특징을 하위 개념이 물려받는 것. 데이터 재사용성이 아니라, 다형성에 초점을 두고 구현을 해야해요. is a 관계
      * 다형성 - 하나의 객체가 여러가지 타입을 가질 수 있는 것. 즉 고양이면서 동시에 동물이라고 부를 수 있게 되는 거죠.
      *
-     * has a (컴포지션)
+     * has a (컴포지션, 합성), 다형성으로 치환되지 않을 때, 클래스간 관계를 맺고싶다면, 컴포지션을 활용하면 됨.
+     *
+     * 인터페이스, GUI, CLI, API, 메뉴얼(사용방법), 강제성을 가진, 할 수 있는
      *
      *
      */
 
 
     public static void main(String[] args) {
-//        Dragon dragon1 = new Dragon("Dragon1");
-//        dragon1.setHp(-100);
-//        System.out.println(dragon1);
 
         //상속의 목적, 타입을 일치시키기 위해 사용.
 
@@ -48,19 +47,10 @@ public class Ch6 {
         Animal bird = new Bird();
         Animal dog = new Dog();
 
+        sound(bird);
 
         Tamer tamer = new Tamer();
-        tamer.whipToAnimals();
-
-
-//
-//
-//
-//        sound(cat);
-//        sound(bird);
-//        sound(dog);
-//
-//        System.out.println(cat.hp);
+        tamer.whipToDog();
 
     }
 
@@ -68,91 +58,60 @@ public class Ch6 {
         a.sound();
     }
 
+}
+
+
+interface Animal { //추상클래스,
+
+    //상수와 추상메서드만 구현할 수 있습니다.
+    int hp = 10;
+    void sound();
+
+
+}
+
+interface 포유류 { //추상클래스,
+
+    void sound();
 
 }
 
 
-abstract class Animal { //추상클래스,
-    int hp = 10;
-    abstract void sound();
-    void a(){
+class Tamer  {
 
+    Dog dog = new Dog();
+
+    public void whipToDog(){
+        dog.sound(); //의존관계.
     }
 
 }
 
 
-//class 포유류 extends Animal{
-//
-//    @Override
-//    void sound() {
-//
-//    }
-//}
-
-class Dog extends Animal {
+class Dog implements Animal {
 
     @Override
-    void sound(){
+    public void sound(){
         System.out.println("멍멍.");
     };
 
 }
 
-class Cat extends Animal {
+class Cat implements Animal {
 
     @Override
-    void sound() {
+    public void sound() {
         System.out.println( "야옹");
     }
 }
 
 
-class Bird extends Animal {
+class Bird implements Animal {
 
     @Override
-    void sound(){
+    public void sound(){
         System.out.println("짹쨱");
     };
 
 }
 
-
-
-class Tamer {
-
-    //List<Animal> animals = new ArrayList<>();
-    Dog dog = new Dog();
-    Cat cat = new Cat();
-
-    void whipToAnimals(){
-        dog.sound();
-        cat.sound();
-    }
-
-}
-
-
-class Dragon {
-    final String name; // 상태
-    private int hp; //4byte
-    static int attack = 10; // 4byte
-
-    Dragon(String name) {
-        this.name = name;
-    }
-
-    public void setHp(int hp) {
-        if (hp >= 0){
-            this.hp = hp;
-        }
-    }
-
-    @Override
-    public String toString() {
-        return "Dragon{" +
-                "name='" + name + '\'' +
-                ", hp=" + hp +
-                '}';
-    }
-}

@@ -35,7 +35,7 @@ public class Ch3 {
 
         //new ArrayList(Integer.MAX_VALUE);
 
-        System.out.println(Dragon.attack); //미리 떠져있음.
+        //System.out.println(Dragon.attack); //미리 떠져있음.
         //System.out.println(Zealot.hp);
 
         Zealot z = new Zealot("Zealot1"); //스택 영역에 생성된 z가 힙 영역에 생성된 Zealot 인스턴스를 가리키고 있는 셈

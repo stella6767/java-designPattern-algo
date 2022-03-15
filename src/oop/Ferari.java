@@ -1,31 +1,22 @@
 package oop;
 
-public class Ferari extends Vehicle implements Control,질주 {
-    private String name;
-    private Engine5000 engine5000;
-    private Tier tier;
+public class Ferari extends Car implements Control, 질주{
 
-    public Ferari(){
-        this.tier = new Tier();
-        this.engine5000 = new Engine5000();
+    private Engine5000 engine5000; //컴포지션,
+    private NormalTier tier;
+
+    @Override
+    public void driving() {
+
     }
 
     @Override
-    public void 엑셀() {
-        engine5000.start();
-        System.out.println("전진");
-    }
+    public void stop() {
 
-    @Override
-    public void 브레이크() {
-
-        System.out.println("멈춤");
     }
 
     @Override
     public void 질주() {
-        System.out.println("나만 질주가 가능하다");
-
+        System.out.println("질주!!!");
     }
-
 }

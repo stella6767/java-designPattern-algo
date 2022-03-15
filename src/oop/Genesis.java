@@ -1,16 +1,21 @@
 package oop;
 
-public class Genesis extends Vehicle implements Control{
-    private String name;
-    private Engine2000 engine2000;
+public class Genesis extends Car implements Control {
 
-    @Override
-    public void 엑셀() {
-        System.out.println("전진");
+    private Engine5000 engine5000;
+    private Tier tier;
+
+    public Genesis(Tier tier) {
+        this.tier = tier;
     }
 
     @Override
-    public void 브레이크() {
-        System.out.println("정지");
+    public void driving() {
+        System.out.println(this.tier + " 로 제네시스가 굴러갑니다.");
+    }
+
+    @Override
+    public void stop() {
+
     }
 }

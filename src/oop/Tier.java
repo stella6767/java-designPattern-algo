@@ -1,6 +1,6 @@
 package oop;
 
-public class Tier {
+public interface Tier {
 
 
 }
