@@ -1,8 +1,6 @@
 package algo.array;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Ch11 {
@@ -58,5 +56,49 @@ public class Ch11 {
 
     }
 
+
+    private static void diffrentTry() {
+        Scanner sc = new Scanner(System.in);
+        int input = sc.nextInt();
+
+
+        List[][] classRoom = new List[5][9];
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 9; j++) {
+                classRoom[i][j] = new ArrayList<Integer>();
+            }
+        }
+
+        int[][] arr = new int[input][5];
+        for (int i = 0; i < input; i++) {
+            for (int j = 0; j < 5; j++) {
+                arr[i][j] = sc.nextInt();
+                classRoom[j][arr[i][j] - 1].add(i);
+            }
+        }
+
+
+
+        int classMan = 0, MaxValue = 0;
+        HashSet<Integer> studentSet = new HashSet<>();
+        List tempStudentList = new ArrayList<Integer>();
+
+        for (int i = 0; i < input; i++) {
+            for (int j = 0; j < 5; j++) {
+                tempStudentList.addAll(classRoom[j][arr[i][j] - 1]);
+            }
+            studentSet.addAll(tempStudentList);
+
+            if (MaxValue < studentSet.size()) {
+                classMan = i;
+                MaxValue = studentSet.size();
+            }
+
+            studentSet.clear();
+            tempStudentList.clear();
+        }
+
+        System.out.println(classMan + 1);
+    }
 
 }
