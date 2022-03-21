@@ -13,4 +13,13 @@ public class Cmmon {
         }
         System.out.println();
     }
+
+
+    public static void print1DArray(int[] list) {
+        System.out.println();
+        for (int i = 0; i < list.length; i++) {
+            System.out.print(list[i] + " ");
+        }
+        System.out.println();
+    }
 }

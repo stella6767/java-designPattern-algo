@@ -24,7 +24,7 @@ public class Ch2 {
 
     /**
      * 괄호문자 제거.
-     * 
+     *
      *
      * @param input
      */
