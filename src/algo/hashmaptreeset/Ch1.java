@@ -31,26 +31,16 @@ public class Ch1 {
         }
 
         //System.out.println(hashMap);
-
-
         char answer = 0;
-
-
         int sum = 0;
-
         for (Map.Entry<Character, Integer> character : hashMap.entrySet()) {
-
             if (character.getValue() > sum){
                 sum = character.getValue();
                 answer = character.getKey();
             }
-
         }
 
-
         System.out.println(answer);
-
-
     }
 
 
