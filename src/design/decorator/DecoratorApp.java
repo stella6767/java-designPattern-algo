@@ -6,8 +6,6 @@ public class DecoratorApp {
      * 동적으로 책임 추가.
      * 객체의 결합을 통해서..
      *
-     *
-     *
      */
 
 
