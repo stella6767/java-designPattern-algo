@@ -8,7 +8,7 @@ public class LaneDecorator extends DisplayDecorator{
      * @param display
      */
     
-    public LaneDecorator(RoadDisplay display) {
+    public LaneDecorator(Display display) {
         super(display);
     }
 

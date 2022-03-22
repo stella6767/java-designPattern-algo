@@ -6,9 +6,9 @@ public class DisplayDecorator implements Display{
      * 다양한 추가 기능에 대한 공통 클래스, Decorator
      */
 
-    private RoadDisplay roadDisplay;
+    private Display roadDisplay;
 
-    public DisplayDecorator(RoadDisplay display) {
+    public DisplayDecorator(Display display) {
         this.roadDisplay = display;
     }
 

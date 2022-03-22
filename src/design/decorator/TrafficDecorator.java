@@ -1,9 +1,10 @@
 package design.decorator;
 
 public class TrafficDecorator extends DisplayDecorator{
-    public TrafficDecorator(RoadDisplay display) {
+    public TrafficDecorator(Display display) {
         super(display);
     }
+
 
 
     @Override
