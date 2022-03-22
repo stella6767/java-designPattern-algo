@@ -48,6 +48,7 @@ public class SingleTonApp {
 
         /**
          * 싱글톤 사용 예시
+         * 런타임.. 스프링 빈 싱글톤 스코프
          */
 
         Runtime runtime = Runtime.getRuntime();

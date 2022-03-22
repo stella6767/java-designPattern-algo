@@ -2,6 +2,12 @@ package design.builder;
 
 public class Builder {
 
+    /**
+     * 객체 생성과정을 더 자유롭게, 커스텀할 수 있다.
+     * @param args
+     */
+
+
     public static void main(String[] args) {
 
         Text text = new Text.Builder()
