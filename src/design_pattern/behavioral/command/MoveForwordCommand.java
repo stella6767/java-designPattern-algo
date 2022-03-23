@@ -4,14 +4,22 @@ public class MoveForwordCommand implements Command{
 
     int space;
 
+    private Robot robot;
 
-    public MoveForwordCommand(int space) {
+
+    public MoveForwordCommand(int space, Robot robot) {
         this.space = space;
+        this.robot = robot;
     }
 
     @Override
     public void execute() {
-        ROBOT.moveForward(space);
+        robot.moveForward(space);
+    }
+
+    @Override
+    public void undo() {
+
     }
 
 

@@ -5,9 +5,19 @@ public class PickUpCommand implements Command{
     /**
      * Create concrete classes
      */
+    private Robot robot;
+
+    public PickUpCommand(Robot robot) {
+        this.robot = robot;
+    }
 
     @Override
     public void execute() {
-        ROBOT.pickup();
+        robot.pickup();
+    }
+
+    @Override
+    public void undo() {
+
     }
 }
