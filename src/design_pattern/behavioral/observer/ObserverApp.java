@@ -30,7 +30,7 @@ public class ObserverApp {
 
 
         randomGenertor.notifyToSubscriber();
-        randomGenertor.notifyToSubscriber();
-        randomGenertor.notifyToSubscriber();
+        //randomGenertor.notifyToSubscriber();
+        //randomGenertor.notifyToSubscriber();
     }
 }

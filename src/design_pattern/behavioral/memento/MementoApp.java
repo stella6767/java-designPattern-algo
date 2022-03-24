@@ -3,6 +3,8 @@ package design_pattern.behavioral.memento;
 public class MementoApp {
 
     /**
+     * 캡술화를 유지하면서 객체 내부 상태를 외부에 저장하는 방법
+     * 
      * 객체의 상태를 이전 상태로 복원하는데 사용. 행동 패턴, 3개의 액터 클래스로 구현
      * Originator는 Memento 객체에 상태를 생성하고 저장하며 Caretaker 객체는 Memento에서 객체 상태를 복원하는 역할을 합니다
      * @param args
@@ -27,6 +29,12 @@ public class MementoApp {
         System.out.println("First saved State: " + originator.getState());
         originator.getStateFromMemento(careTaker.get(1));
         System.out.println("Second saved State: " + originator.getState());
+
+
+        /**
+         * 객체를 직렬화 한다는 것은 객체를 바이트스트림으로 바꾼다는 것.
+         */
+
     }
 
 }

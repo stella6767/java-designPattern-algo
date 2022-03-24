@@ -1,5 +1,8 @@
 package design_pattern.behavioral.memento;
 
+
+
+
 public class Originator {
 
     private String state;

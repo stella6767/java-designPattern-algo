@@ -6,7 +6,7 @@ import java.util.List;
 public class Ch6 {
 
     /**
-     * oop (객체 지향 프로그래밍).
+     * javacore.oop (객체 지향 프로그래밍).
      *
      * 추상화, 캡슐화, 은닉성, 다형성, 상속성
      *
