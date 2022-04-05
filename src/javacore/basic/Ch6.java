@@ -1,5 +1,7 @@
 package javacore.basic;
 
+import java.io.File;
+
 public class Ch6 {
 
     /**
@@ -27,84 +29,129 @@ public class Ch6 {
         //상속의 목적, 타입을 일치시키기 위해 사용.
 
 
-        //heap 영역(cat, animal) -
-        Animal cat = new Cat();
+        Cat cat = new Cat();
 
-        //자연, 돌 extends 자연, 바위, 물
+        Animal cat3 = new Cat();
+        cat3.sound2();
 
-
-//        //heap(포유류, 동물)
-//        Animal 포유류1 = new 포유류();
+//        //heap 영역(cat, animal) -
+//        Animal cat = new Cat();
 //
-//        포유류 포 = (포유류) 포유류1;
-//        포.sound();
+//        //자연, 돌 extends 자연, 바위, 물
+//
+//
+////        //heap(포유류, 동물)
+////        Animal 포유류1 = new 포유류();
+////
+////        포유류 포 = (포유류) 포유류1;
+////        포.sound();
+//
+////        Cat c = (Cat) 포; //컴파일 시점에서 에러를 잡을 수 없기 때문에, 주의를 해줘야
+////        c.sound();
+//        Animal bird = new Bird();
+//        Animal dog = new Dog();
 
-//        Cat c = (Cat) 포; //컴파일 시점에서 에러를 잡을 수 없기 때문에, 주의를 해줘야
-//        c.sound();
-        Animal bird = new Bird();
-        Animal dog = new Dog();
-
-        sound(bird);
-
+//        sound(bird);
         Tamer tamer = new Tamer();
         tamer.whipToDog();
 
-    }
 
+//        tamer.whipToDog();
+
+
+        //is a Dog is a Animal
+        //child is a parent.
+    }
     static void sound(Animal a){
         a.sound();
     }
-
 }
 
 
-interface Animal { //추상클래스,
+
+abstract class Animal { //추상클래스,
 
     //상수와 추상메서드만 구현할 수 있습니다.
     int hp = 10;
-    void sound();
 
+    //사수가 기능은 실수를 방지를 하는 거.
+    abstract void sound();
 
-}
-
-interface 포유류 { //추상클래스,
-
-    void sound();
-
-}
-
-
-class Tamer  {
-
-    Dog dog = new Dog();
-
-    public void whipToDog(){
-        dog.sound(); //의존관계.
+    void sound2(){
+        System.out.println("짖는다.");
     }
 
 }
 
 
-class Dog implements Animal {
+//
+//interface 포유류 { //추상클래스,
+//
+//    void sound();
+//
+//}
+//
 
+
+interface Robot { //추상클래스,
+
+    //상수랑 추상메서드만 정의를 할 수 있어요,
+    void sound();
+
+}
+
+
+
+class Tamer  {
+    private Bird bird = new Bird();
+
+    public void whipToDog(){
+        bird.sound(); //의존관계.
+    }
+}
+
+
+
+class DogRobot implements Robot {
+
+    @Override
+    public void sound(){
+        System.out.println("부릉 부릉");
+    }
+
+
+    public void loo(){
+        System.out.println("부릉 부릉");
+    }
+
+}
+
+
+class Dog extends Animal {
     @Override
     public void sound(){
         System.out.println("멍멍.");
     };
-
 }
 
-class Cat implements Animal {
+class Cat extends Animal {
+    @Override
+    void sound() {
+
+    }
 
     @Override
-    public void sound() {
-        System.out.println( "야옹");
+    void sound2() {
+        System.out.println("야옹");
+        super.sound2();
     }
+//공통적인 특징.
+
+
 }
 
 
-class Bird implements Animal {
-
+class Bird extends Animal {
     @Override
     public void sound(){
         System.out.println("짹쨱");

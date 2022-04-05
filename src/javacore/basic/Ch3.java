@@ -1,5 +1,7 @@
 package javacore.basic;
 
+import java.util.ArrayList;
+
 public class Ch3 {
 
 
@@ -29,39 +31,65 @@ public class Ch3 {
      */
 
 
+
     public static void main(String[] args) {
 
-        System.out.println("JVM 메모리 구조");
-
-        //new ArrayList(Integer.MAX_VALUE);
-
-        //System.out.println(Dragon.attack); //미리 떠져있음.
-        //System.out.println(Zealot.hp);
-
-        Zealot z = new Zealot("Zealot1"); //스택 영역에 생성된 z가 힙 영역에 생성된 Zealot 인스턴스를 가리키고 있는 셈
-        Zealot z1 = new Zealot("Zealot2"); //스택 영역에 생성된 z가 힙 영역에 생성된 Zealot 인스턴스를 가리키고 있는 셈
-        Zealot z2 = new Zealot("Zealot3"); //스택 영역에 생성된 z가 힙 영역에 생성된 Zealot 인스턴스를 가리키고 있는 셈
-
-
-        z.hp = 10;
-        z.attack = 30; //하나의 공간에 값만 바뀜. 새로 메모리가 생겨난 게 아니에요.
-
-        printZealot(z);
-        printZealot(z1);
-        printZealot(z2);
-
-////        Ch3 ch3 = new Ch3();
-////
-////        ch3.a();
-////
-////
-////        if (true){
-////            int a = 10;
-////        }
-////
-////        int a = 10;
-////        System.out.println(a);
+//        System.out.println("JVM 메모리 구조");
 //
+//        new ArrayList(Integer.MAX_VALUE);
+
+
+        System.out.println(Zealot.attack);
+
+        Zealot zelot1 = new Zealot("zelot1");
+        Zealot zelot2 = new Zealot("zelot2");
+        Zealot zelot3 = new Zealot("zelot3");
+
+        System.out.println(zelot1.name);
+
+        zelot1.hp = 100;
+
+        zelot1.attack = 20;
+
+        System.out.println(zelot1.attack); //100
+        System.out.println(zelot2.attack);
+        System.out.println(zelot3.attack);
+
+
+
+
+
+
+
+
+
+
+
+
+//        Zealot z = new Zealot("Zealot1"); //스택 영역에 생성된 z가 힙 영역에 생성된 Zealot 인스턴스를 가리키고 있는 셈
+//        Zealot z1 = new Zealot("Zealot2"); //스택 영역에 생성된 z가 힙 영역에 생성된 Zealot 인스턴스를 가리키고 있는 셈
+//        Zealot z2 = new Zealot("Zealot3"); //스택 영역에 생성된 z가 힙 영역에 생성된 Zealot 인스턴스를 가리키고 있는 셈
+//
+//
+//        z.hp = 10;
+//        z.attack = 30; //하나의 공간에 값만 바뀜. 새로 메모리가 생겨난 게 아니에요.
+//
+//        printZealot(z);
+//        printZealot(z1);
+//        printZealot(z2);
+
+//        Ch3 ch3 = new Ch3();
+//
+//        ch3.a();
+//
+//
+//        if (true){
+//            int a = 10;
+//        }
+//
+        int a = 10;
+//        System.out.println(a);
+
 //        try {
 //
 //            stackOverFlow(0);
@@ -83,6 +111,7 @@ public class Ch3 {
 
     static int stackOverFlow(int num){
          num = num + 1;
+        System.out.println("num => " + num);
          return stackOverFlow(num);
     }
 
