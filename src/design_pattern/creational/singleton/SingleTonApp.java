@@ -16,52 +16,39 @@ public class SingleTonApp {
 
     public static void main(String[] args) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException, IOException, ClassNotFoundException {
 
-//        Thread thread = new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                while (true){
-//                    //System.out.println(Thread.currentThread().getName() + " 시작");
-//                    Card sinhandCard = SinhandCard.createInstance();
-//                    try {
-//                        Thread.sleep(10);
-//                    } catch (InterruptedException e) {
-//                        e.printStackTrace();
-//                    }
-//                }
-//            }
-//        });
-//
-//
-//
-//        thread.setName("thread1");
-//        thread.start();
-//
-//
-//        //System.out.println(Thread.currentThread().getName() + " 시작");
-//
-//
-//        while (true){
-//            //System.out.println(Thread.currentThread().getName() + " 시작");
-//            Card sinhandCard = SinhandCard.createInstance();
-//            try {
-//                Thread.sleep(10);
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
-//        }
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                //System.out.println(Thread.currentThread().getName() + " 시작");
+                SinhandCard sinhandCard = SinhandCard.createInstance();
+
+                for (int i = 0; i < 100; i++) {
+                    int count = sinhandCard.return100();
+                    System.out.println(count);
+                }
+            }
+        });
 
 
-        CardEnum sinhanCard = CardEnum.SINHANCARD.getSinhanCard();
+        thread.setName("thread1");
+        thread.start();
+
+
+        //System.out.println(Thread.currentThread().getName() + " 시작");
+
+
+        //System.out.println(Thread.currentThread().getName() + " 시작");
+        SinhandCard sinhandCard = SinhandCard.createInstance();
+        for (int i = 0; i < 100; i++) {
+            int count = sinhandCard.return100();
+            System.out.println(count);
+        }
 
 
 
+
+        //CardEnum sinhanCard = CardEnum.SINHANCARD.getSinhanCard();
         //Card sinhandCard = SinhandCard.createInstance();
-
-
-
-
-
-
 
 
 //        Card card1 = CreditCard.getInstance();
@@ -108,9 +95,9 @@ public class SingleTonApp {
 
 
     private static void checkIsSingleTon(Card card1, Card card2) {
-        if (card1 == card2){
+        if (card1 == card2) {
             System.out.println("싱글톤 객체임");
-        }else{
+        } else {
             System.out.println("싱글톤 아님.");
         }
     }

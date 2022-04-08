@@ -9,6 +9,6 @@ public class DigitObserver implements Observer {
 
     @Override
     public void update(int number) {
-        System.out.println("숫자: "+ number);
+        System.out.println( Thread.currentThread().getName() + "숫자: "+ number);
     }
 }

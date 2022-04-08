@@ -23,13 +23,26 @@ public class ObserverApp {
         };
 
 
-        //클라이언트는 게시자(publisher) 및 구독자(subscriber) 객체를 별도 생성한 후 구독자 등록.
         randomGenertor.subscribe(observer1);
         randomGenertor.subscribe(observer2);
         randomGenertor.subscribe(observer3);
 
 
-        randomGenertor.notifyToSubscriber();
+        Thread thread1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                //클라이언트는 게시자(publisher) 및 구독자(subscriber) 객체를 별도 생성한 후 구독자 등록.
+                randomGenertor.notifyToSubscriber();
+            }
+        });
+
+        thread1.start();
+
+
+
+
+
+
         //randomGenertor.notifyToSubscriber();
         //randomGenertor.notifyToSubscriber();
     }
