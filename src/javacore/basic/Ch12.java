@@ -19,7 +19,20 @@ public class Ch12 {
 
         //FruitBox<Fruit> fruitBox = new FruitBox<>();
         FruitBox<? super Fruit> fruitBox = new FruitBox<>();
+
+
+        //와일드카드 <?>
+        List<? extends Spoil> spoilBox = new ArrayList<Banana>(); //와일드 카드의 상한제한.. T와 그 자손들만
+        List<? super Spoil> spoilBox2 = new ArrayList<>(); //하한제한, T와 그 조상들만
+        List<?> spoilBox3 = new ArrayList<>(); //모든 타입이 가능.. <? extends Object> 와 같음
+        //spoilBox.add(new Banana());
+
+
+
+        //Banana banana = spoilBox.get(0);
+
         fruitBox.add(apple);
+        fruitBox.add(new Banana());
         fruitBox.getAll();
 
 
@@ -29,6 +42,22 @@ public class Ch12 {
 
 
 class Apple extends Fruit {
+
+}
+
+class Banana extends Fruit implements Spoil {
+
+}
+
+class Melon extends Fruit {
+
+}
+
+class Grapes extends Fruit implements Spoil{
+
+}
+
+interface Spoil  {
 
 }
 
