@@ -8,6 +8,10 @@ public class Person {
 
     private int age;
 
+    public Person( String firstName,  String lastName, int i) {
+
+    }
+
     public int getAge() {
         return age;
     }
