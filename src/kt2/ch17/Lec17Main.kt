@@ -81,3 +81,8 @@ private fun filterFruits2(
 //    return fruit.name == "사과"
 //}
 //val isApple2 = { fruit: Fruit -> fruit.name == "사과" }
+
+
+fun sameNameFunc(){
+
+}

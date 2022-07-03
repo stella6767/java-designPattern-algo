@@ -31,6 +31,12 @@ class KotilnPerson(
     name: String = "defaultName",
     var age: Int = 1
 ) {
+    operator fun component1(): String {
+        return this.name
+    }
+    operator fun component2(): Int {
+        return this.age
+    }
 
 
     // property에 대한 custom getter을 만들 때, field 키워드를 사용.
